@@ -1,0 +1,10 @@
+type = theme
+name = Pretty in Purple
+description = A simple purple theme with fancy tags.
+version = 1.0
+core = 7.x
+backdrop = 1.x
+
+stylesheets[screen][] = css/reset.css
+stylesheets[screen][] = css/purple.css
+stylesheets[screen][] = css/style.css
