@@ -1,12 +1,15 @@
 /******************************************************************************
  * HTML elements.
  *****************************************************************************/
+html {
+  font-size: 16px;
+}
 body {
   color: #2F2F2F;
   background: #E2D1EF;
   font-style: normal;
-  line-height: 25px;
-  font-size: 0.875em; /* 14px base font */
+  font-size: 1em; /* 16px base font */
+  line-height: 26px;
   font-family: Lucida Grande, Lucida Sans Unicode, sans-serif;
 }
 a {
@@ -15,6 +18,20 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+ul li,
+ol li,
+.item-list ul li,
+.item-list ol li {
+  margin-bottom: 5px;
+}
+@media (min-width: 48em) {  /* MD - 768px @ 16px font size */
+  ul li,
+  ol li,
+  .item-list ul li,
+  .item-list ol li {
+    margin-bottom: 10px;
+  }
 }
 hr {
   margin: 0;
@@ -30,33 +47,37 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin: 10px 0;
 }
+@media (min-width: 34em) { /* SM - 544px @ 16px font size */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 15px 0;
+  }
+}
 h1 {
   font-size: 150%;
   padding-bottom: 5px;
 }
 h1.page-title {
-  border-bottom:1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
 }
 h2 {
   font-size: 140%;
-  border-bottom:1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
   text-transform: uppercase;
   font-weight:normal;
   letter-spacing: 1px;
-  margin-bottom:5px;
-  padding:5px 0;
+  margin-bottom: 5px;
+  padding: 5px 0;
 }
 h3 {
-  font-size: 130%;
-  border-bottom:1px solid #CCCCCC;
-  margin-bottom:5px;
-  padding:5px 0;
+  font-size: 130%; /* 20.8px */
+  margin-bottom: 5px;
+  padding: 5px 0;
 }
 h4 {
   font-size: 120%;
-  border-bottom:1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
   text-transform: uppercase;
-  font-weight:normal;
+  font-weight: normal;
   letter-spacing: 1px;
   padding: 3px 0;
 }
@@ -111,12 +132,19 @@ nobr {
 abbr, acronym {
   border-bottom: dotted 1px;
 }
-ul, .block ul, .item-list ul, .item-list ul {
+ul,
+.block ul,
+.item-list ul {
   list-style-type: square;
   list-style-image: none;
-  margin: 0.25em 0 0.25em 1.5em;
+  margin: 0.25em 0 1.5em 1em;
 }
-.item-list ul li, li.leaf, ul.menu li {
+ul li {
+  padding-left: 5px;
+}
+li.leaf,
+ul.menu li,
+.item-list ul li {
   list-style-type: disc;
   list-style-image: none;
 }
@@ -298,9 +326,35 @@ html.js fieldset.collapsible .fieldset-wrapper {
 .form-item label.option input {
   vertical-align: middle;
 }
-input.form-submit, a.button {
+input.form-autocomplete,
+input.form-text,
+input.form-email,
+textarea.form-textarea,
+select.form-select {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-top-color: #999;
+  background: #fff;
+  color: #333;
+  border-radius: 3px;
+}
+input.form-text:focus,
+input.form-email:focus,
+textarea.form-textarea:focus,
+select.form-select:focus {
+  color: #000;
+  border-color: #ace;
+}
+html.js input.form-autocomplete {
+  background-position: 100% 4px;
+}
+html.js input.throbbing {
+  background-position: 100% -16px;
+}
+input.form-submit,
+a.button {
   cursor: pointer;
-  padding: 4px 17px;
+  padding: 6px 20px;
   color: #77459F;
   text-align: center;
   font-weight: normal;
@@ -323,7 +377,10 @@ input.button-primary {
   background: #77459F;
   color: #ffffff;
 }
-a.button:link, a.button:visited, a.button:hover, a.button:active {
+a.button:link,
+a.button:visited,
+a.button:hover,
+a.button:active {
   text-decoration: none;
   color: #5a5a5a;
 }
@@ -347,28 +404,6 @@ form input#edit-delete {
   border-color: #fff #ddd #ccc;
   text-shadow: none;
   color: #999;
-}
-input.form-autocomplete,
-input.form-text,
-textarea.form-textarea,
-select.form-select {
-  padding: 2px;
-  border: 1px solid #ccc;
-  border-top-color: #999;
-  background: #fff;
-  color: #333;
-}
-input.form-text:focus,
-textarea.form-textarea:focus,
-select.form-select:focus {
-  color: #000;
-  border-color: #ace;
-}
-html.js input.form-autocomplete {
-  background-position: 100% 4px;
-}
-html.js input.throbbing {
-  background-position: 100% -16px;
 }
 
 /******************************************************************************
@@ -445,7 +480,8 @@ ul.action-links a {
  * Tabs.
  *****************************************************************************/
 nav.tabs {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #CCCCCC;
+  margin: 15px 0;
 }
 ul.primary {
   height: 31px;
@@ -471,7 +507,7 @@ ul.primary li a:hover {
   color: #000;
   font-weight: bold;
   padding: 0 15px;
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
   border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
   -webkit-border-top-left-radius: 10px;
@@ -548,24 +584,27 @@ ul.inline li {
   max-width: 100%
 }
 
-@media (min-width: 34em) {
+@media (min-width: 34em) { /* SM - 544px @ 16px font size */
   body {
     padding-left: 30px;
     padding-right: 30px;
   }
   .layout {
     padding: 15px 15px 35px;
-    border: 1px solid #969696;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin: 10px auto;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 15px auto;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 48em) {  /* MD - 768px @ 16px font size */
   body {
     padding-left: 50px;
     padding-right: 50px;
+  }
+  .layout {
+    padding: 30px 0;
   }
   .container {
     max-width: 45rem;
@@ -581,14 +620,26 @@ ul.inline li {
 .l-header h1,
 .l-header .site-name {
   font-weight: bold;
-  font-size: 150%;
+  font-size: 160%;
   margin: 10px 0 5px 0;
   clear: both;
 }
-@media (min-width: 568px) {
+@media (min-width: 34em) { /* SM - 544px @ 16px font size */
   .l-header h1,
   .l-header .site-name {
     clear: none;
+    line-height: 34px;
+    margin: 15px 0 5px 0;
+    padding: 0;
+  }
+}
+@media (min-width: 48em) {  /* MD - 768px @ 16px font size */
+  .l-header {
+    padding: 15px 0;
+  }
+  .l-header h1,
+  .l-header .site-name {
+    padding: 15px 0 0;
   }
 }
 
@@ -603,19 +654,58 @@ ul.inline li {
 .header-right {
   float: right;
 }
+.header-right img {
+  max-width: 75px;
+}
 .header-left {
   float: left;
 }
-@media (min-width: 568px) {
+.header-left img {
+  max-width: 50px;
+}
+@media (min-width: 34em) { /* SM - 544px @ 16px font size */
   .header-right,
   .header-left {
-    width: 25%;
+    width: 22%;
+  }
+  .location {
+    margin: 0 22%;
+  }
+  .header-right img {
+    max-width: 65px;
+  }
+  .header-left img {
+    max-width: 40px;
+  }
+}
+@media (min-width: 37em) { /* 592px @ 16px font size -- SM */
+  .header-left img {
+    max-width: 50px;
+  }
+  .header-right img {
+    max-width: 85px;
   }
 }
 @media (min-width: 768px) {
   .header-right,
   .header-left {
-    width: 33%;
+    width: 25%;
+  }
+  .location {
+    margin: 0 30%;
+  }
+  .header-left img,
+  .header-right img {
+    max-width: none;
+  }
+}
+@media (min-width: 62em) { /* LG - 992px @ 16px font size */
+  .header-right,
+  .header-left {
+    width: 30%;
+  }
+  .location {
+    margin: 0 33%;
   }
 }
 .header-box .email {
@@ -641,10 +731,16 @@ ul.inline li {
   letter-spacing: 1px;
 }
 .copy {
-  padding-bottom: 20px;
+  padding: 15px;
   text-align: center;
   font-size: 12px;
   letter-spacing: 1px;
+}
+
+@media (min-width: 34em) { /* SM - 544px @ 16px font size */
+  .copy {
+    padding: 15px 15px 30px;
+  }
 }
 
 /******************************************************************************
@@ -658,7 +754,7 @@ ul.inline li {
  * Blocks.
  *****************************************************************************/
 .block {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .block h2 {
   margin-bottom: 10px;
@@ -667,13 +763,25 @@ ul.inline li {
   margin-top: 0;
 }
 
+@media (min-width: 62em) { /* LG - 992px @ 16px font size */
+  .block {
+    margin-top: 45px;
+  }
+}
+
 /******************************************************************************
  * Fields
  *****************************************************************************/
+.node .content .field {
+  margin-bottom: 7px;
+}
+.node .content .field-name-field-tags {
+  margin-bottom: 0;
+}
 .field-type-text-with-summary p img {
   display: block;
   margin: 0 auto;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #969696;
 }
 
 /******************************************************************************
@@ -700,7 +808,7 @@ ul.inline li {
   color: #fff;
   text-decoration: none;
   -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;	
+  -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -771,7 +879,7 @@ ul.inline li {
   border-bottom: 0;
 }
 .comment {
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
   background-color: #eeeeee;
   border-radius: 10px;
   padding: 15px;
