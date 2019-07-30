@@ -471,8 +471,8 @@ ul.action-links a {
  * Breadcrumb.
  *****************************************************************************/
 .breadcrumb {
-  font-size: 11px;
-  padding-bottom: 5px;
+  font-size: 0.785em; /* 15px */
+  padding: 10px 0;
   text-align: left;
 }
 
