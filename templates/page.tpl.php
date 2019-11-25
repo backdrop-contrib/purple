@@ -50,7 +50,7 @@
   </head>
   <body class="<?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($body_attributes); ?>>
     <?php print $page; ?>
-    <div class="copy">&copy; <?php print date('Y'); ?> <a href="http://www.jeneration.com" title="Jeneration Web Development">Jeneration Web Development</a></div>
+    <div class="copy">&copy; <?php print date('Y'); ?> <a href="<?php print base_path(); ?>" title="<?php print $site_name; ?>"><?php print $site_name; ?></a></div>
     <?php print $page_bottom; ?>
     <?php print backdrop_get_js('footer'); ?>
   </body>
