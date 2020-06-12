@@ -1,18 +1,48 @@
-on: pull_request
+name: Backdrop Code Review
 
-name: Inspections
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
-  runPHPCSInspection:
-    name: Run PHPCS inspection
+  code-standards:
+
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php_version: ['7.3']
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
-    - name: Run PHPCS inspection
-      uses: rtCamp/action-phpcs-code-review@v2.0.2
-      env:
-        GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
-        SKIP_FOLDERS: "tests,.github"
+        fetch-depth: 1
+
+    - name: Set up PHP ${{ matrix.php_version }}
+      uses: shivammathur/setup-php@v2
       with:
-        args: "WordPress,WordPress-Core,WordPress-Docs"
+        php-version: ${{ matrix.php_version }}
+
+    - name: Install dependencies
+      run: composer install --dev
+
+    - name: Composer version
+      run: composer -V
+
+    - name: Install Codesniffer
+      run: composer global require dealerdirect/phpcodesniffer-composer-installer
+
+    - name: Install Coder
+      run: git clone git@github.com:backdrop-contrib/coder_review.git coder_review
+
+    - name: Verify Registered Standards
+      run: ~/.composer/vendor/bin/phpcs -i
+
+    - name: Manually Set Installed Paths
+      run: ~/.composer/vendor/bin/phpcs --config-set installed_paths coder_review/coder_sniffer
+
+    - name: Code review initiated
+      run: |
+        ~/.composer/vendor/bin/phpcs --standard=Backdrop --extensions=php,module,inc,install,test,css,info,txt,md ./
