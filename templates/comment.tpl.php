@@ -1,39 +1,9 @@
 <?php
 /**
  * @file
- * Default theme implementation for comments.
+ * Theme implementation for comments.
  *
- * Available variables:
- * - $author: Comment author. Can be link or plain text.
- * - $content: An array of comment items. Use render($content) to print them all, or
- *   print a subset such as render($content['field_example']). Use
- *   hide($content['field_example']) to temporarily suppress the printing of a
- *   given element.
- * - $created: Formatted date and time for when the comment was created.
- *   Preprocess functions can reformat it by calling format_date() with the
- *   desired parameters on the $comment->created variable.
- * - $changed: Formatted date and time for when the comment was last changed.
- *   Preprocess functions can reformat it by calling format_date() with the
- *   desired parameters on the $comment->changed variable.
- * - $new: New comment marker.
- * - $permalink: Comment permalink.
- * - $submitted: Submission information created from $author and $created during
- *   template_preprocess_comment().
- * - $picture: Authors picture.
- * - $signature: Authors signature.
- * - $status: Comment status. Possible values are:
- *   comment-unpublished, comment-published or comment-preview.
- * - $title: Linked title.
- * - $title_prefix (array): An array containing additional output populated by
- *   modules, intended to be displayed in front of the main title tag that
- *   appears in the template.
- * - $title_suffix (array): An array containing additional output populated by
- *   modules, intended to be displayed after the main title tag that appears in
- *   the template.
- *
- * These two variables are provided for context:
- * - $comment: Full comment object.
- * - $node: Node object the comments are attached to.
+ * See available variables in core/modules/comment/templates/comment.tpl.php.
  *
  * @see template_preprocess()
  * @see template_preprocess_comment()
