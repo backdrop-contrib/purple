@@ -22,12 +22,6 @@ jobs:
       with:
         php-version: ${{ matrix.php_version }}
 
-    - name: Install dependencies
-      run: composer install --dev
-
-    - name: Composer version
-      run: composer -V
-
     - name: Install Coder
       run: git clone git@github.com:backdrop-contrib/coder_review.git coder_review
 
