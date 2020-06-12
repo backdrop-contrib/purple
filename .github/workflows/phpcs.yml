@@ -35,7 +35,7 @@ jobs:
       run: composer global show -P
 
     - name: Composer home directory
-      run: composer config home
+      run: composer global config home
 
     - name: Verify Registered Standards
       run: ~/.composer/vendor/bin/phpcs -i
