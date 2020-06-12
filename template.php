@@ -1,5 +1,6 @@
 <?php
 /**
+ * @file
  * Theme system functions.
  */
 
@@ -26,7 +27,11 @@ function purple_css_alter(&$css) {
  */
 function purple_preprocess_page(&$variables) {
   // Add conditional CSS for IE8 and below.
-  backdrop_add_css(path_to_theme() . '/ie.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE), 'preprocess' => FALSE));
+  backdrop_add_css(path_to_theme() . '/ie.css', array(
+    'weight' => CSS_THEME,
+    'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE),
+    'preprocess' => FALSE,
+  ));
   $variables['site_name'] = config_get('system.core', 'site_name');
 }
 
@@ -50,7 +55,7 @@ function purple_preprocess_node(&$variables) {
  *****************************************************************************
 
 /**
- * Remove extra.
+ * Theme function override.
  */
 function purple_username($variables) {
   if (isset($variables['link_path'])) {
