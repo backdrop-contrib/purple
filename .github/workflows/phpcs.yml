@@ -29,7 +29,7 @@ jobs:
       run: unzip coder_review.zip
 
     - name: Install Codesniffer
-      run: composer global require dealerdirect/phpcodesniffer-composer-installer
+      run: composer global require squizlabs/php_codesniffer:2.9.2
 
     - name: List all of the available packages
       run: composer global show -P
