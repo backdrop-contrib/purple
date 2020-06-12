@@ -22,8 +22,11 @@ jobs:
       with:
         php-version: ${{ matrix.php_version }}
 
-    - name: Install Coder
-      run: git clone git@github.com:backdrop-contrib/coder_review.git coder_review
+    - name: Download Coder
+      run: wget https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip
+
+    - name: Unzip Coder
+      run: unzip https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip
 
     - name: Install Codesniffer
       run: composer global require dealerdirect/phpcodesniffer-composer-installer
