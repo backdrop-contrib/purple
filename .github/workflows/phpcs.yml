@@ -23,10 +23,10 @@ jobs:
         php-version: ${{ matrix.php_version }}
 
     - name: Download Coder
-      run: wget https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip
+      run: wget https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip ~/.
 
     - name: Unzip Coder
-      run: unzip coder_review.zip
+      run: unzip ~/coder_review.zip
 
     - name: Install Codesniffer
       run: composer global require squizlabs/php_codesniffer:1.5.6
@@ -41,7 +41,7 @@ jobs:
       run: ~/.composer/vendor/bin/phpcs -i
 
     - name: Manually Set Installed Paths
-      run: ~/.composer/vendor/bin/phpcs --config-set installed_paths coder_review/coder_sniffer
+      run: ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/coder_review/coder_sniffer
 
     - name: Code review initiated
       run: ~/.composer/vendor/bin/phpcs --standard=Backdrop --extensions=php,module,inc,install,test,css,info,txt,md ./
