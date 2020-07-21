@@ -98,6 +98,7 @@ h6 {
 }
 p {
   margin: 1em 0;
+  line-height: 1.666em;
 }
 figure {
   margin: 1em 40px;
@@ -743,6 +744,7 @@ ul.inline li {
   }
   .location {
     margin: 0 22%;
+    line-height: 1.666em;
   }
   .header-right img {
     max-width: 65px;
@@ -961,8 +963,8 @@ ul.inline li {
  * Nodes.
  *****************************************************************************/
 .node .meta {
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 0.875rem;
+  letter-spacing: .5px;
 }
 
 /******************************************************************************
