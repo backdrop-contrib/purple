@@ -29,7 +29,7 @@ jobs:
       run: unzip ~/coder_review.zip
 
     - name: Get coder_review patch
-      run: wget https://github.com/backdrop-contrib/coder_review/pull/14.patch -O ~/coder_review/14.patch.
+      run: wget https://github.com/backdrop-contrib/coder_review/pull/14.patch -O ~/coder_review/14.patch
 
     - name: Change to coder review directory
       run: cd ~/coder_review
