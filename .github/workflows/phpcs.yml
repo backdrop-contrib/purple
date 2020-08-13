@@ -35,7 +35,7 @@ jobs:
       run: cd ~/coder_review
 
     - name: Apply coder_review patch
-      run: patch -p1 < ~/coder_review/14.patch
+      run: patch -d ~/coder_review ~/coder_review/14.patch
 
     - name: Install Codesniffer
       run: composer global require squizlabs/php_codesniffer:3.5.6
