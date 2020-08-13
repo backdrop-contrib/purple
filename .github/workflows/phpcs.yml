@@ -23,16 +23,16 @@ jobs:
         php-version: ${{ matrix.php_version }}
 
     - name: Download Coder review
-      run: wget https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip ~/.
+      run: wget https://github.com/backdrop-contrib/coder_review/releases/download/1.x-1.0.1-beta/coder_review.zip -O ~/.
 
     - name: Unzip Coder review
       run: unzip ~/coder_review.zip
 
-    - name: change to Coder review dir
-      run: cd ~/coder_review
-
     - name: Get coder_review patch
-      run: wget https://github.com/backdrop-contrib/coder_review/pull/14.patch
+      run: wget https://github.com/backdrop-contrib/coder_review/pull/14.patch -O ~/coder_review/.
+
+    - name: Change to coder review directory
+      run: cd ~/coder_review
 
     - name: Apply coder_review patch
       run: patch -p1 < 14.patch
