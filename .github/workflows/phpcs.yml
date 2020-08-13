@@ -27,9 +27,16 @@ jobs:
 
     - name: Unzip Coder
       run: unzip ~/coder_review.zip
+      run: cd ~/coder_review
+
+    - name: Get coder_review patch
+      run: wget https://github.com/backdrop-contrib/coder_review/pull/14.patch
+
+    - name: Apply coder_review patch
+      run: patch -p1 < 14.patch
 
     - name: Install Codesniffer
-      run: composer global require squizlabs/php_codesniffer:1.5.6
+      run: composer global require squizlabs/php_codesniffer:3.5.6
 
     - name: List all of the available packages
       run: composer global show -P
