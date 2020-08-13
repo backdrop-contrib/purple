@@ -1,6 +1,9 @@
 <?php
 /**
- * @file field--node-reference.tpl.php
+ * @file
+ * Template for all node reference fields.
+ *
+ * See available variables in core/modules/field/templates/field.tpl.php.
  *
  * @see template_preprocess_field()
  * @see theme_field()

@@ -1,6 +1,9 @@
 <?php
 /**
- * @file field--field-tags.tpl.php
+ * @file
+ * Template file for the "tags" field.
+ *
+ * See available variables in core/modules/field/templates/field.tpl.php.
  *
  * @see template_preprocess_field()
  * @see theme_field()

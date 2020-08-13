@@ -23,7 +23,9 @@ function purple_css_alter(&$css) {
  *****************************************************************************/
 
 /**
- * Override or insert variables into the page template.
+ * Prepare variables for page templaes.
+ *
+ * @see page.tpl.php
  */
 function purple_preprocess_page(&$variables) {
   // Add conditional CSS for IE8 and below.
@@ -36,7 +38,9 @@ function purple_preprocess_page(&$variables) {
 }
 
 /**
- * Override or insert variables.
+ * Prepare variables for header templates.
+ *
+ * @see header.tpl.php
  */
 function purple_preprocess_header(&$variables) {
   // Add the path for our images.
@@ -44,7 +48,9 @@ function purple_preprocess_header(&$variables) {
 }
 
 /**
- * Override or insert variables.
+ * Prepare variables for node templates.
+ *
+ * @see node.tpl.php
  */
 function purple_preprocess_node(&$variables) {
   $variables['content']['links']['comment'] = array();
