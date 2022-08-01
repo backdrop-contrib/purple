@@ -46,11 +46,12 @@ legend {
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  margin: 10px 0;
+  line-height: 1.5;
+  margin: 15px 0;
 }
 @media (min-width: 34em) { /* SM - 544px @ 16px font size */
   h1, h2, h3, h4, h5, h6 {
-    margin: 15px 0;
+    margin: 30px 0;
   }
 }
 h1 {
@@ -58,7 +59,6 @@ h1 {
   padding-bottom: 5px;
 }
 h1.page-title {
-  border-bottom: 1px solid #CCCCCC;
   margin-bottom: 30px;
 }
 h2 {
@@ -208,9 +208,15 @@ pre {
   border: 1px solid #CCC;
   padding: 2px 5px;
   font-size: 12px;
+  overflow: hidden;
 }
 div.codeblock {
   padding: 5px 0;
+}
+
+figcaption {
+  color: #595959;
+  font-size: .9em;
 }
 
 /******************************************************************************
@@ -403,8 +409,6 @@ select.form-select {
   border-top-color: #999;
   background: #fff;
   color: #333;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 input.form-text:focus,
@@ -434,8 +438,6 @@ a.button {
   border-left-color: #D2D2D2;
   border-right-color: #D2D2D2;
   background: #e4e4e4;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
   margin-bottom: 1em;
   margin-right: .75em;
@@ -462,11 +464,10 @@ div.node-form input#edit-submit-1 {
   background: url(images/buttons.png) 0px -40px repeat-x;
   color: #133B54;
 }
-input.form-submit:active {
-  background: #666;
+input.form-submit:active,
+input.form-submit:hover {
+  background: #000;
   color: #fff;
-  border-color: #555;
-  text-shadow: #222 0px -1px 0px;
 }
 form input#edit-delete {
   background: #eee;
@@ -518,12 +519,11 @@ ul.action-links a {
   color: #fff;
   font-size: 0.94em;
   text-decoration: none;
-  -moz-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-left-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
 }
 #skip-link a:hover,
@@ -540,8 +540,9 @@ ul.action-links a {
  * Breadcrumb.
  *****************************************************************************/
 .breadcrumb {
-  font-size: 1rem; /* 16px */
-  padding: 10px 0;
+  font-size: 0.875rem;
+  letter-spacing: .5px;
+  padding: 5px 0;
   text-align: left;
 }
 .breadcrumb ol li {
@@ -549,6 +550,13 @@ ul.action-links a {
 }
 .breadcrumb ol li a {
   margin-right: 5px;
+}
+
+.block-system-breadcrumb {
+  background: #F2F2F2;
+}
+.block-system-breadcrumb a {
+  color: #693D8C; /* slightly darker purple on gray bg for a11y */
 }
 
 /******************************************************************************
@@ -582,10 +590,9 @@ ul.primary li a:hover {
   font-weight: bold;
   padding: 0 15px;
   border: 1px solid #CCCCCC;
-  -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 ul.primary li.active a,
 ul.primary li.active a.active,
@@ -622,8 +629,6 @@ ul.secondary li a:hover,
 ul.secondary li.active a,
 ul.secondary li.active a.active {
   padding: 3px 10px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
   border-radius: 7px;
 }
 ul.secondary li.active a,
@@ -631,6 +636,57 @@ ul.secondary li.active a.active {
   color: #fff;
   background: #666;
 }
+
+/******************************************************************************
+ * Menu: top-level links only
+ *****************************************************************************/
+ul.menu-top-only {
+  display: block;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+ul.menu-top-only li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+ul.menu-top-only li a {
+  display: inline-block;
+  padding: 5px 15px;
+}
+
+@media (min-width: 48em) {
+  .menu-toggle-state:not(:checked) ~ .menu {
+    display: flex;
+  }
+}
+
+.block-system-main-menu {
+  background-color: #77459F;
+  color: #fff;  
+}
+.block-system-main-menu a {
+  color: #fff;
+  border-right: 1px solid #E2D1EF;
+  border-left: 1px solid #E2D1EF;
+}
+.block-system-main-menu li:first-child a { 
+  border-left: 2px solid #E2D1EF;
+}
+.block-system-main-menu li:last-child a { 
+  border-right: 2px solid #E2D1EF;
+}
+.block-system-main-menu a:hover {
+  background-color: #E2D1EF;
+  color: #77459F;
+}
+.block-system-main-menu a.active,
+.block-system-main-menu a.active-trail {
+  background-color: #F2F2F2;
+  color: #000;
+}
+
 
 /******************************************************************************
  * Inline links
@@ -647,7 +703,7 @@ ul.inline li {
  * Page layout.
  *****************************************************************************/
 .layout {
-  padding: 15px 0 35px;
+  padding: 15px 0 0;
   text-align: left;
   background: #fff;
   position: relative;
@@ -664,10 +720,8 @@ ul.inline li {
     padding-right: 30px;
   }
   .layout {
-    padding: 15px 15px 35px;
+    padding: 15px 15px 0;
     border: 1px solid #CCCCCC;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     margin: 15px auto;
   }
@@ -678,10 +732,10 @@ ul.inline li {
     padding-right: 50px;
   }
   .layout {
-    padding: 30px 0;
+    padding: 30px 0 0;
   }
   .container {
-    max-width: 45rem;
+    max-width: 48rem; /* 768px */
   }
 }
 
@@ -798,6 +852,19 @@ ul.inline li {
 }
 
 /******************************************************************************
+ * Top region
+ *****************************************************************************/
+.l-top {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 15px 0;
+}
+.l-top .block-system-main-menu,
+.l-top .block-system-breadcrumb {
+  margin-top: 0;
+}
+
+/******************************************************************************
  * Messages
  *****************************************************************************/
 .l-messages {
@@ -811,6 +878,10 @@ ul.inline li {
   text-align: center;
   font-size: 12px;
   letter-spacing: 1px;
+  padding: 15px;
+}
+.l-footer .block {
+  margin-top: 0;
 }
 .copy {
   padding: 15px;
@@ -820,6 +891,9 @@ ul.inline li {
 }
 
 @media (min-width: 34em) { /* SM - 544px @ 16px font size */
+  .l-footer {
+    padding: 30px;
+  }
   .copy {
     padding: 15px 15px 30px;
   }
@@ -828,8 +902,15 @@ ul.inline li {
 /******************************************************************************
  * Pager.
  *****************************************************************************/
-.item-list ul.pager li {
+.item-list ul.pager {
+  margin-top: 15px;
+}
+.item-list ul.pager li,
+.item-list ul.pager li a {
   margin: 0 5px;
+}
+.item-list ul.pager li.pager-current {
+  margin: 0 10px; 
 }
 
 /******************************************************************************
@@ -880,6 +961,11 @@ ul.inline li {
   border: 1px solid #969696;
 }
 
+.node ul.links.inline li a {
+  font-size: 0.875rem;
+  letter-spacing: .5px;
+}
+
 /******************************************************************************
  * Tags Fields style from: http://cssglobe.com/pure-css3-post-tags
  *****************************************************************************/
@@ -903,11 +989,7 @@ ul.inline li {
   background: #969696;
   color: #fff;
   text-decoration: none;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
 .field-name-field-tags a:before {
@@ -930,12 +1012,8 @@ ul.inline li {
   float: left;
   width: 4px;
   height: 4px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   background: #fff;
-  -moz-box-shadow: -1px -1px 2px #004977;
-  -webkit-box-shadow: -1px -1px 2px #004977;
   box-shadow: -1px -1px 2px #004977;
 }
 .field-name-field-tags a:hover {
@@ -949,14 +1027,18 @@ ul.inline li {
  * Teasers.
  *****************************************************************************/
 .view-mode-teaser {
-  background-color: #F6F6F2;
+  background-color: #F2F2F2;
   border: 1px solid #CCC;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 30px;
   position: relative;
+}
+
+@media (min-width: 62em) { /* LG - 992px @ 16px font size */
+  .view-mode-teaser {
+    margin-bottom: 60px;
+  }
 }
 
 /******************************************************************************
@@ -977,8 +1059,6 @@ ul.inline li {
 .comment {
   border: 1px solid #CCCCCC;
   background-color: #f7f7f7;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 15px;
   margin: 0 15px 15px 15px;

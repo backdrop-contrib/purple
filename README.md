@@ -14,6 +14,10 @@ Installation
   best practice to modify any files within a contributed project (because it is
   very easy to accidentally overwrite them). Do so at your own risk.
 
+- Recommendations for Layout configuration: 
+  * Place your Menu block into the "Top" region.
+  * Place the Breadcrumb block into the "Top" region.
+
 Documentation
 -------------
 
