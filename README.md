@@ -7,7 +7,7 @@ Installation
 ------------
 
 - Install this theme using the official Backdrop CMS instructions at
-  hhttp://cssglobe.com/pure-css3-post-tags
+  https://docs.backdropcms.org/documentation/themes
 
 - If you desire, you can add additional CSS into the style.css file. That file
   will not be updated in future versions of this theme. Note that it is not a
