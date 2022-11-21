@@ -641,13 +641,50 @@ ul.secondary li.active a.active {
 }
 
 /******************************************************************************
+ * Header block
+ *****************************************************************************/
+.block-system-header {
+  padding: 15px;
+}
+@media (min-width: 48em) {
+  .block-system-header {
+    padding: 30px;
+  }
+}
+
+/******************************************************************************
+ * Main Menu block
+ *****************************************************************************/
+.block-system-main-menu {
+  background-color: #77459F;
+  color: #fff;  
+  border-top: 2px solid #77459F;
+  border-bottom: 2px solid #77459F;
+}
+.block-system-main-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.block-system-main-menu a {
+  display: block;
+  color: #fff;
+  padding: 5px 15px;
+}
+.block-system-main-menu a.active,
+.block-system-main-menu a.active-trail {
+  background-color: #F2F2F2;
+  color: #000;
+}
+.block-system-main-menu a:hover {
+  background-color: #E2D1EF;
+  color: #77459F;
+  text-decoration: none;
+}
+
+/******************************************************************************
  * Menu: top-level links only
  *****************************************************************************/
 ul.menu-top-only {
-  text-align: justify;
-  margin: 0;
-  padding: 0;
-
   display: flex;
   flex-flow: row wrap;
   text-align: center;
@@ -662,10 +699,6 @@ ul.menu-top-only li {
   padding: 0;
   list-style-type: none;
 }
-ul.menu-top-only li a {
-  display: block;
-  padding: 5px 15px;
-}
 
 @media (min-width: 48em) {
   .menu-toggle-state:not(:checked) ~ .menu {
@@ -673,25 +706,11 @@ ul.menu-top-only li a {
   }
 }
 
-.block-system-main-menu {
-  background-color: #77459F;
-  color: #fff;  
-  border-top: 2px solid #77459F;
-  border-bottom: 2px solid #77459F;
-}
-.block-system-main-menu a {
-  color: #fff;
-}
-.block-system-main-menu a.active,
-.block-system-main-menu a.active-trail {
-  background-color: #F2F2F2;
-  color: #000;
-}
-.block-system-main-menu a:hover {
-  background-color: #E2D1EF;
-  color: #77459F;
-  text-decoration: none;
-}
+/******************************************************************************
+ * Menu: smart menu
+ *****************************************************************************/
+
+/* todo */
 
 
 /******************************************************************************
@@ -750,6 +769,18 @@ ul.inline li {
   .block {
     margin-top: 45px;
   }
+}
+
+/******************************************************************************
+ * Hero Block
+ *****************************************************************************/
+.block-hero {
+  margin-top: 0;
+  background: #F2F2F2;
+}
+.block-hero h4 {
+  color: #2F2F2F;
+  border-bottom: none;
 }
 
 /******************************************************************************
