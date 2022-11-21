@@ -141,6 +141,9 @@
 .l-top {
   border-bottom: 2px solid #ccc;
 }
+body.front .l-top {
+  border-bottom: none;
+}
 .l-top .block-system-main-menu,
 .l-top .block-system-breadcrumb {
   margin-top: 0;
