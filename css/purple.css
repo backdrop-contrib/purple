@@ -796,10 +796,6 @@ ul.inline li {
   .header-left {
     width: 22%;
   }
-  .location {
-    margin: 0 22%;
-    line-height: 1.666em;
-  }
   .header-right img {
     max-width: 65px;
   }
@@ -820,9 +816,6 @@ ul.inline li {
   .header-left {
     width: 25%;
   }
-  .location {
-    margin: 0 30%;
-  }
   .header-left img,
   .header-right img {
     max-width: none;
@@ -832,9 +825,6 @@ ul.inline li {
   .header-right,
   .header-left {
     width: 25%;
-  }
-  .location {
-    margin: 0 33%;
   }
 }
 .header-box .email {
