@@ -48,7 +48,7 @@
  * header.
  *****************************************************************************/
 .l-header {
-  text-align:center;
+  text-align: center;
 }
 .l-header h1,
 .l-header .site-name {
@@ -62,17 +62,12 @@
   .l-header .site-name {
     clear: none;
     line-height: 34px;
-    margin: 15px 0 5px 0;
     padding: 0;
   }
 }
 @media (min-width: 48em) {  /* MD - 768px @ 16px font size */
   .l-header {
     padding: 15px 0;
-  }
-  .l-header h1,
-  .l-header .site-name {
-    padding: 15px 0 0;
   }
 }
 
@@ -151,6 +146,7 @@
  *****************************************************************************/
 .l-top {
   margin: 15px 0;
+  border-bottom: 2px solid #ccc;
 }
 .l-top .block-system-main-menu,
 .l-top .block-system-breadcrumb {
@@ -167,8 +163,16 @@
 /******************************************************************************
  * Center wrapper
  *****************************************************************************/
-.l-wrapper {
+.layout > .l-wrapper {
   background: #fff;
+  padding-bottom: 30px;
+}
+
+/******************************************************************************
+ * Content
+ *****************************************************************************/
+.l-content {
+  padding: 0;
 }
 
 /******************************************************************************

@@ -7,4 +7,5 @@ backdrop = 1.x
 
 stylesheets[screen][] = css/reset.css
 stylesheets[screen][] = css/purple.css
+stylesheets[screen][] = css/layout.css
 stylesheets[screen][] = css/style.css
