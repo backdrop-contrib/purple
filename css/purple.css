@@ -405,6 +405,8 @@ ul.tips li {
 input.form-autocomplete,
 input.form-text,
 input.form-email,
+input.form-number,
+input.form-url,
 textarea.form-textarea,
 select.form-select {
   padding: 6px;
@@ -416,6 +418,7 @@ select.form-select {
 }
 input.form-text:focus,
 input.form-email:focus,
+input.form-number:focus,
 textarea.form-textarea:focus,
 select.form-select:focus {
   color: #000;
@@ -906,10 +909,12 @@ ul.inline li {
 }
 .comment .submitted {
   font-size: 11px;
+  margin-top: 10px;
 }
 .comment ul.links {
   float: right;
   text-align: right;
+  margin-top: 10px;
 }
 
 /******************************************************************************
@@ -919,7 +924,7 @@ h2.comment-form {
   margin-top: 40px;
 }
 #comment-form .form-type-textfield {
-  width: 31%;
+  width: 49.9%;
   float: left;
   overflow: hidden;
   margin: 0;
